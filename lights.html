@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Fig. 13.3: draw.html -->
+<!-- A simple drawing program. -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!-- Doughnut Club Branding Content -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Doughnut Club - Lights Out Game</title>
+    <link rel = "stylesheet" type = "text/css" href = "lights/style.css">
+	<link href="styles/doughnutclub.css" rel="stylesheet" type="text/css"/>
+	<script>var __adobewebfontsappname__="dreamweaver"</script>
+	<script src="http://use.edgefonts.net/source-sans-pro:n2,n4:default.js" type="text/javascript"></script>
+	<script>
+		window.jQuery || 
+			document.write('<script src="jquery-3.3.1.min.js"><\/script>')
+	</script>
+    <script src = "lights/lights.js"></script>
+	<script>
+	$(document).ready(function(){
+	  //$('#message').html('Document ready!');
+	  createLights();
+	  var win = false;
+	  //$('#message').html('win = ' + win);
+	  $('#tablebody').on('click', 'td', function(){
+	    //$('#message').html('Clicked td!');
+	    if(win == true && $('.on').length > 0){
+	      win = false;
+	    }
+	    if(win == false){
+	      var $this = $(this);
+	      var cellIndex = $this.index();
+
+	      $this.toggleClass("off on");
+	      $(this).closest('td').next().toggleClass('off on');
+	      $(this).closest('td').prev().toggleClass('off on');
+	      $(this).closest('tr').next().children().eq(cellIndex).toggleClass('off on');
+	      $this.closest('tr').prev().children().eq(cellIndex).toggleClass('off on');
+	      win = checkWin();
+	    }
+	  });
+	});
+	</script>
+</head>
+
+<footer id="footer" class="noprint">
+	<div>
+		Please send feedback to
+		<a href="mailto:dcrump@mail.bradley.edu?subject=Doughnut%20Club%20Feedback">
+		dcrump@mail.bradley.edu</a>
+	</div>
+</footer>
+
+<body>
+	<script>
+		$(function(){
+			$("#menu-placeholder").load("menu.html");
+		});
+	</script>
+
+	<div class="branding">
+		<div id="title">
+			<div id="name"><b>Doughnut Club </b></div>
+			<div id="term"><b> Spring 2018</b></div>
+		</div>
+		<div id="menu-placeholder" class="noprint"></div>
+	</div>
+
+<div id="wrapper">
+	<span id="message"></span>
+	<div id="playfield">
+		<button type="button" onclick="resetGame()">Reset</button>
+		<table id = "lights">
+			<caption>Turn off all the lights to win the game.</caption>
+			<tbody id = "tablebody"></tbody>
+		</table>
+	</div>
+</div>
+<br/><br/>
+</body>
+</html>

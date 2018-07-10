@@ -1,0 +1,145 @@
+<html>
+<link href="styles/trainingscheduler.css" rel="stylesheet" type="text/css">
+
+<head>
+	<title>Training Scheduler</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<link rel="stylesheet" type="text/css" href="styles/menu.css" media="screen" />
+</head>
+<body>
+
+<footer id="footer" class="noprint">
+	<div>
+		Please send feedback to
+		<a href="mailto:dcrump@mail.bradley.edu?subject=Doughnut%20Club%20Feedback">
+		dcrump@mail.bradley.edu</a>
+	</div>
+</footer>
+
+<!-- University Navigation Bar starts -->
+<div class="branding">
+	<div id="logo" class="noprint">
+	    <div id="long"><img src="/trainingscheduler/resources/images/Blogo_rgb_White_Hor.png" alt="Bradley University"></div>
+	    <div id="tall"><img src="/trainingscheduler/resources/images/Blogo_rgb_White_Left.png" alt="Bradley University"></div>
+  	</div>
+	<div id="userDetails" class="noprint">
+		<div id="userName">
+			<b>User:</b> dcrump 
+		</div>
+		<div id="userGroup">
+			
+				<b>Group:</b> Super 
+				<a href="app-logout"> Logout </a><br>
+			
+		</div>
+	</div>
+	<div id="title">
+		<div id="name"><b>Doughnut Club </b></div>
+		<div id="term"><b> Spring 2018</b></div>
+		<!-- 
+			
+		 -->
+	</div>
+
+<!-- <script src="/trainingscheduler/resources/jquery.min.js"></script>-->
+<script>
+	window.jQuery || 
+		document.write('<script src="/trainingscheduler/resources/jquery.min.js"><\/script>'
+			+ '<script src="/trainingscheduler/resources/jquery-ui.min.js"><\/script>')
+</script>
+
+<!-- Source: http://line25.com/tutorials/how-to-create-a-pure-css-dropdown-menu -->
+
+<script>
+$(document).ready(function(){
+	$('input[type=checkbox]').click(function (event) {
+	    var checked = $(this).is(':checked');
+	    if (checked) {
+	    	$(this).parent().siblings().find('input[type=checkbox]').prop('checked', false);
+	    } else { //for click child to uncheck subchild
+	        $(this).parent().find('input[type=checkbox]').prop('checked', false);
+	    }
+	});
+});
+</script>
+<div id="menu" class="noprint">
+	<nav>
+		<label for="tm" id="toggle-menu"><span class="drop-icon">&#9776;</span> Menu</label>
+	 	<input id="tm" type="checkbox"/>
+		<ul class="main-menu clearfix">
+			<li><A href="enrollment">Enrollment <span class="drop-icon">&#9662;</span>
+				<label title="Toggle Drop-down" class="drop-icon" for="sm1">&#9656;</label>
+				</a>
+				<input type="checkbox" id="sm1">
+				<ul class="sub-menu">
+					<li><A href="enrollment">Enroll</A></li>
+					<li><A href="schedule">My Schedule</A></li>
+					<!-- <ul>
+						<li><A href="schedule">My Schedule</A></li>
+						<li><A href="completed-search">My Completed Courses</A></li>
+					</ul></li>-->
+				</ul></li>
+			
+			
+				<li><A href="course-list">Course Details <span class="drop-icon">&#9662;</span>
+				<label title="Toggle Drop-down" class="drop-icon" for="sm2">&#9656;</label>
+				</a>
+				<input type="checkbox" id="sm2">
+				<ul class="sub-menu">
+					<li><A href="course-list-taught">Courses I Teach<span class="drop-icon">&#9662;</span>
+					<label title="Toggle Drop-down" class="drop-icon" for="sm2.1">&#9656;</label></A>
+					<input type="checkbox" id="sm2.1">
+					<ul class="sub-menu">
+						<li><A href="course-list-taught">My Current Courses</A></li>
+						<li><A href="course-list-completed">My Previous Courses</A></li>
+					</ul></li>
+					<li><A href="course-list">Course Management <span class="drop-icon">&#9662;</span>
+				<label title="Toggle Drop-down" class="drop-icon" for="sm2.2">&#9656;</label>
+				</a>
+				<input type="checkbox" id="sm2.2">
+					<ul class="sub-menu">
+						<li><A href="course-list">Edit From List</A></li>
+						<li><A href="course-add">Add New</A></li>
+					</ul></li>
+				</ul></li>
+			
+			
+				<li><A href="permissions">Users <span class="drop-icon">&#9662;</span>
+				<label title="Toggle Drop-down" class="drop-icon" for="sm3">&#9656;</label>
+				</a>
+				<input type="checkbox" id="sm3">
+				<ul class="sub-menu">
+					<li><A href="permissions">User List</A></li>
+					
+						<li><A href="permissions-impersonate">Impersonate Group</A></li>
+					
+					<li><A href="permissions-add">Add User</A>
+				</ul></li>
+			
+		</ul>
+	</nav>
+</div>
+</div>
+<!-- <script src="/trainingscheduler/resources/jquery.min.js"></script>-->
+<script>
+	window.jQuery || 
+		document.write('<script src="/trainingscheduler/resources/jquery.min.js"><\/script>'
+			+ '<script src="/trainingscheduler/resources/jquery-ui.min.js"><\/script>')
+</script>
+<div id="body">
+<!-- -->
+
+<h2>
+Training Session Scheduling
+</h2>
+
+
+	<P> Welcome to Doughnut Club, David.  Use the menu above to navigate.</P>
+
+
+<!--  
+	
+-->
+ </div>
+</body>
+</html>

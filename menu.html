@@ -1,0 +1,56 @@
+<script>
+	window.jQuery || 
+		document.write('<script src="jquery-3.3.1.min.js"><\/script>')
+</script>
+<!-- <link href="styles/doughnutclub.css" rel="stylesheet" type="text/css">-->
+<link href="styles/menu.css" rel="stylesheet" type="text/css">
+<!-- Original Source: http://line25.com/tutorials/how-to-create-a-pure-css-dropdown-menu -->
+<!-- Seconary Source: Reused/converted menu.jsp from Bradley University Training Scheduler webapp -->
+<script>
+$(document).ready(function(){
+  $('input[type=checkbox]').click(function (event) {
+    var checked = $(this).is(':checked');
+    if (checked) {
+	$(this).parent().siblings().find('input[type=checkbox]').prop('checked', false);
+    } else { //for click child to uncheck subchild
+        $(this).parent().find('input[type=checkbox]').prop('checked', false);
+    }
+  });
+});
+</script>
+<div id="menu" class="noprint">
+  <nav>
+    <label for="tm" id="toggle-menu"><span class="drop-icon">&#9776;</span> Menu</label>
+    <input id="tm" type="checkbox"/>
+    <ul class="main-menu clearfix">
+	<li><A href="index.html">Home</a></li>
+	<li><A href="#">Activities <span class="drop-icon">&#9662;</span>
+	  <label title="Toggle Drop-down" class="drop-icon" for="sm2">&#9656;</label>
+	  </a>
+	<input type="checkbox" id="sm2"/>
+	<ul class="sub-menu">
+	  <li><a href="Craps.html">Craps <span class="drop-icon">&#9662;</span>
+	    <label title="Toggle Drop-down" class="drop-icon" for="sm2.1">&#9656;</label>
+	    </a>
+	    <input type="checkbox" id="sm2.1"/>
+	    <ul class="sub-menu">
+	      <li><a href="Craps.html">Play Craps</a></li>
+	      <li><a href="CrapsRules.html">Learn the Rules</a></li>
+	    </ul></li>
+	    <li><a href="lights.html">Play Lights Out</a></li>
+	    <li><a href="draw.html">Draw</a></li>
+	    <li><a href="interest.html">Interest Information</a></li>
+	  </ul></li>
+	      <li><A href="query.php">Wine Store</a></li>
+	      <li><A href="wine.php">Final - Wine Search</a></li>
+	      <li><A href="login.html">Members <span class="drop-icon">&#9662;</span>
+	      <label title="Toggle Drop-down" class="drop-icon" for="sm3">&#9656;</label>
+	      </a>
+			<input type="checkbox" id="sm3">
+				<ul class="sub-menu">
+					<li><A href="login.html">Member Login</A></li>
+					<li><A href="register.html">Register</A>
+				</ul></li>
+		</ul>
+	</nav>
+</div>

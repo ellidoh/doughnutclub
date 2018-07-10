@@ -1,0 +1,11 @@
+/* CSS for draw.html. */
+#playfield {
+	margin: 30px 30px 30px 30px;
+}
+#lights { max-width: 400px;
+          border: 1px solid #999999;
+          border-collapse: collapse }
+td      { width: 30px; height: 30px; margin: 0px; padding: 0px;
+	border: 1px black solid; }
+.off   { background-color: blue; }
+.on    { background-color: red; }

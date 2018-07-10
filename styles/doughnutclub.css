@@ -1,0 +1,748 @@
+html
+{
+	height: 100%
+}
+body
+{
+	position: relative;
+	min-height: 100%;
+	background-color:#EFF5F8;
+	margin:10px 30px 10px 30px;
+}
+
+h1
+{
+color:black;
+text-align:center;
+}
+
+p
+{
+font-family:"Times New Roman";
+font-size:20px;
+margin:30px 30px;
+}
+
+.ui-datepicker-trigger {
+	vertical-align: bottom;
+}
+
+.impersonation-list {
+	font-size:20px;
+	margin-left:30px;
+}
+.impersonation-heading {
+	font-size: 20px;
+	margin-left: 26px;
+	margin-top: 30px;
+	font-weight: bold;
+}
+
+.printAdjust {
+	display: block;
+}
+
+th.tablesorter-headerUnSorted:not(.sorter-false) {
+	/*background-image: url('images/bg.gif');
+    background-repeat: no-repeat;
+    background-position: center right;*/
+    cursor: pointer;
+}
+
+th.tablesorter-headerUnSorted:not(.sorter-false) span::after {
+    content: "\2195"; /* Up & Down Arrow */
+    float: right;
+}
+
+th.tablesorter-headerAsc:not(.sorter-false) {
+	/*background-image: url('images/asc.gif');
+    background-repeat: no-repeat;
+    background-position: center right;*/
+    cursor: pointer;
+}
+
+th.tablesorter-headerAsc:not(.sorter-false) span::after {
+	content: "\2193"; /* Down Arrow */
+    float: right;
+}
+
+th.tablesorter-headerDesc:not(.sorter-false) {
+	/*background-image: url('images/desc.gif');
+    background-repeat: no-repeat;
+    background-position: center right;*/
+    cursor: pointer;
+}
+
+th.tablesorter-headerDesc:not(.sorter-false) span::after {
+	content: "\2191"; /* Up Arrow */
+    float: right;
+}
+
+table.wines
+{
+	border: 1px outset black;
+	width: 85%;
+	margin-left: 0px;
+}
+
+table.wines thead > tr
+{
+	background-color: blue;
+	color: #FFF;
+}
+
+table.wines tbody tr:nth-child(even) 
+{
+	background-color: lightblue;
+}
+table.hasSeats
+{
+	border: 1px outset black;
+	width: 95%;
+	margin-left: 0px;
+}
+table#instTable, table#userTable
+{
+	border: 1px outset black;
+	min-width: 30%;
+	margin-left: 20px;
+}
+table#myFoot
+{
+	width: 100%;
+	margin-left: 20px;
+}
+
+div#userTableDiv table#userTable, div#myFootDiv table#myFoot
+{
+	margin-left: 0px;
+}
+
+div#myFootDiv table#myFoot tr td:last-child {
+	text-align: right;
+	padding-right: 10px;
+}
+
+.wines th, .wines td, #instTable th, #instTable td, 
+#userTable th, #userTable td, .completed th, .completed td
+{
+    border: 1px inset black;
+}
+.wines td, #instTable td, #userTable td, .completed td
+{
+	padding: 10px;
+	text-align: left;
+	//white-space:nowrap;
+}
+.wines tr:hover > td, #instTable tr:hover > td, 
+#userTable tr:not([disabled]):not(.addAttend):not(.removeAttend):hover > td, #schedule tr:hover > td,
+.completed tr:hover > td
+{
+	background-color: #f5f5f5;
+}
+
+#userTable tr.addAttend:not([disabled])
+{
+	background-color: green;
+}
+
+#userTable tr.addAttend:not([disabled]):hover > td
+{
+	background-color: lightgreen;
+}
+
+#userTable tr.removeAttend:not([disabled])
+{
+	background-color: red;
+}
+
+#userTable tr.removeAttend:hover > td,
+#userTable tr.removeAttend[disabled]
+{
+	background-color: lightcoral;
+}
+
+textarea
+{
+	resize: none;
+}
+
+hr
+{
+	color: #0000A5;
+}
+
+/* University branding */
+.branding {
+	position: relative;
+	width:100%;
+	height: auto;
+	min-height: 155;
+	border-bottom-style: solid;
+	border-bottom-color:#33ccff;
+	border-bottom-width: 2px;
+	background: #0000A5;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	
+	display: flex;
+	flex-flow: row wrap;
+	flex-grow: 1;
+	justify-content: space-between;
+}
+.branding > a:link, #footer a:link {
+	color: #ff3216;
+}
+#headerRight a:visited, #footer a:visited {
+	color: #ff3216;
+}
+
+/* Header/Banner stuff */
+/*.branding > #logo {
+	order: 1;
+	height: auto;
+	margin-left: 5px;
+	margin-top: 5px;
+	flex: 1 40%;
+}
+
+#logo > #long {
+	display: block;
+}
+#long > img {
+	max-height: 44px;
+	height: auto;
+	width: auto;
+}
+#logo > #tall {
+	display: none;
+	
+}
+#tall > img {
+	max-height: 70px;
+	height: auto;
+	width: auto;
+}*/
+
+.branding > #title {
+	order: 1;
+	flex: 1 auto;
+	
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	text-align: center;
+}
+#title > #name {
+	order: 1;
+}
+#title > #term {
+	order: 2;
+}
+#title #notice {
+	order: 3;
+}
+
+.branding > #userDetails {
+	order: 3;
+	flex: 1 30%;
+	margin-left: auto;
+	margin-top: 5px;
+	margin-right: 5px;
+	display: flex;
+	flex-flow: row wrap;
+	align-content: flex-start;
+	justify-content: flex-end;
+}
+
+.branding > #menu-placeholder {
+	order: 2;
+	flex: 0 100%;
+	align-self: flex-start;
+}
+
+#reg-container {
+	/*border: 2px solid #ddd; */
+	max-width: 50%;
+	margin-top: 5px;
+	margin-left: 5px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+}
+
+#reg-left {
+	order: 1;
+	/*border: 3px solid #aaa; */
+}
+
+#reg-right {
+	order: 2;
+	/*border: 3px dotted #a00;*/
+	margin-left: auto;
+}
+
+#video {
+	margin:30px 30px 30px 30px;
+}
+
+video {
+	width: 100%;
+	height: auto;
+}
+#userDetails > #userName {
+	text-align: right;
+	order: 1;
+}
+#userDetails > #userGroup {
+	margin-left: 1em;
+	text-align: right;
+	order: 2;
+}
+
+#wrapper {
+	padding-bottom: 30px /* height of footer */
+	min-width: auto;
+}
+#left-side {
+	order: 1;
+	min-width: auto;
+	display: flex;
+	flex-flow: row wrap;
+	align-content: space-between;
+}
+	
+#left-side > #logo {
+	order: 1;
+	height: auto;
+	margin-left: 5px;
+	margin-top: 5px;
+	flex: 1 40%;
+}
+
+#wrapper img {
+	max-height: 200px;
+	height: auto;
+	width: auto;
+}
+
+#right-side {
+	order: 2;
+	min-width: auto;
+	display: flex;
+	flex-flow: row wrap;
+	align-content: space-between;
+}
+
+#footer {
+	position: absolute;
+	width: 100%;
+	word-wrap: break-word;
+	/*min-width: 900px;*/
+	bottom:0px;
+    min-height:30px;
+    border-top-style: solid;
+	border-top-color:#33ccff;
+	border-top-width: 2px;
+    background:#0000A5;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 900px) {
+	/*body {
+		background-color: blue;
+	}*/
+	.branding {
+		min-width: auto;
+		display: flex;
+		flex-flow: row wrap;
+		align-content: space-between;
+	}
+	
+	.branding > #logo {
+		flex: 1 auto;
+		order: 1;
+		height: auto;
+		margin-right: auto;
+	}
+	
+	.branding > #title {
+		order: 3;
+		flex: 1 40%;
+		
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		margin-top: 10px;
+		margin-left: 10px;
+		
+	}
+	#title > #name {
+		order: 1;
+	}
+	#title > #term {
+		order: 2;
+		margin-left: 1em;
+	}
+	#title #notice {
+		order: 3;
+	}
+	
+	.branding > #userDetails {
+		order: 2;
+		/*flex: 1 auto;*/
+		margin-left: auto;
+		
+		flex-flow: row wrap;
+		/*align-content: flex-end;*/
+		justify-content: flex-end;
+	}
+	
+	.branding > #menu-placeholder {
+		flex: 0 100%;
+		order: 5;
+		align-self: flex-start;
+		margin-right: auto;
+	}
+	
+	.branding > #sponsored {
+		order: 4;
+		
+		text-align: right;
+		align-self: flex-end;
+		margin-left: auto;
+	}
+	
+	#userDetails > #userName {
+		text-align: right;
+		order: 1;
+	}
+	#userDetails > #userGroup {
+		text-align: right;
+		order: 2;
+	}
+	
+}
+@media screen and (max-width: 700px) {
+	body {
+		/*background-color: red;*/
+		margin:10px 20px 10px 20px;
+	}
+	.branding {
+		height: auto;
+		min-height: auto;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
+	.branding > #logo
+	{
+		order: 1;
+		flex: 1 100%;
+	}
+	#logo > #long {
+		display: none;
+	}
+	#logo > #tall {
+		display: block;
+	}
+	.branding > #title
+	{
+		order: 3;
+		flex: 1 100%;
+		flex-flow: row wrap;
+	}
+	.branding > #userDetails
+	{
+		order: 2;
+		margin-top: 10px;
+		flex: 1 100%;
+		text-align: left;
+		justify-content: flex-start;
+		margin-left: 10px;
+	}
+	.branding > #menu-placeholder
+	{
+		order: 5;
+		flex: 1 auto;
+	}
+	.branding > #sponsored
+	{
+		order: 4;
+		flex: 1 100%;
+		margin-left: 10px;
+		text-align: left;
+		margin-top: 10px;
+	}
+	
+	/* Responsive Tables */
+	/* Force table to not be like tables anymore */
+	table.wines, table#instTable, table#userTable, 
+	table#schedule, table.completed {
+		border: 0;
+	}
+	table.wines, table.completed {
+		/*margin-left: -25px;*/
+		width: 100%;
+	}
+	table#instTable/*, table#schedule*/ {
+		width: 80%;
+	}
+	table#userTable {
+		width: 80%;
+	}
+	div#myFootDiv table#myFoot tr td:last-child {
+		text-align: left;
+		padding-left: 10px;
+}
+	table.wines thead, table#schedule thead, table#instTable thead, 
+	table#userTable thead, table.completed thead {
+		display: none;
+	}
+	
+	table.wines tr, table#schedule tr, table#instTable tr, 
+	table#userTable tr, table.completed tr {
+		margin-bottom: 10px;
+		display: block; 
+		border-bottom: 2px solid #ddd; 
+	}
+	
+	table.wines td, table#schedule td, table#instTable td, 
+	table#userTable td, table.completed td {
+		display: block;
+		border-bottom: 1px solid #eee; 
+		text-align: right;
+		word-wrap: break-word;
+	}
+	table.userPerms {
+		border-collapse: collapse;
+	}
+	table.wines td:last-child, table#instTable td:last-child, 
+	table#userTable td:last-child, table#schedule td:last-child,
+	table.userPerms td:nth-child(4), table.completed td:last-child {
+		border-bottom: 0;
+	}
+	table.wines td:before, table#schedule td:before, 
+	table#instTable td:before, table#userTable td:before,
+	table.completed td:before {
+		content: attr(data-label);
+		word-wrap: break-word;
+		float: left;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	table.userPerms td:last-child {
+		border-top: 0;
+	}
+	
+}
+/* Formatting change for small screens */
+@media screen and (max-width: 400px) {
+	table.wines td:after, table#instTable td:after, 
+	table#userTable td:after, table.completed td:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	table.wines td:before, table.wines td,
+	table#instTable td:before, table#instTable td,
+	table#userTable td:before, table#userTable td,
+	table.completed td:before, table.completed td {
+		float: none;
+		text-align: center;
+	}
+	table.wines td:before, table#instTable td:before, 
+	table#userTable td:before, table.completed td:before {
+		content: attr(data-label) "\A";
+		white-space: pre;
+		text-align: center;
+	}
+}
+/* Content stuff */
+.blue-divider {
+	border-top: 1px solid #0000A5;
+}
+.red-divider {
+	border-top: 1px solid #A50000;
+}
+.course {
+    margin-left: 15px;
+    border-top: 1px solid #0000A5;
+}
+
+.course-desc {
+	margin-left: 20px;
+	font-weight: normal;
+}
+
+.wines {
+	margin-left: 30px;
+}
+
+.nowrap {
+	display: inline-block;
+}
+
+#instructor-div {
+	margin-left: 30px;
+	width: 50%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+#assigned-inst-div {
+	flex: 0 0 40%;
+	/*margin-left: auto;*/
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+}
+#avail-inst-div {
+	flex: 0 0 40%;
+	/*margin-right: auto;*/
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+}
+#instructor-div > #inst-buttons {
+	flex: 0 0 auto;
+	display: flex;
+	flex-flow: column nowrap;
+	align-content: space-between;
+}
+#instructor-div label {
+	flex: 0 40%;
+	align-self: flex-start;
+}
+#instructor-div #assigned-inst, #instructor-div #instructor {
+	flex: 1 20%;
+}
+#instructor option.available{
+    background-color:#FFF;
+}
+
+#instructor option.assigned{
+  background-color:#F00;
+}
+    
+#assigned-inst option.assigned{
+  background-color:#FFF;
+}
+    
+#assigned-inst option.available{
+  background-color:#0F0;
+}
+
+/* Roster/Attendance */
+/*#userTableDiv {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	background-color: yellow;
+}
+#userTableDiv #userTable {
+	order: 1;
+	flex: 0 0 100%;
+	background-color: blue;
+}
+#userTableDiv #selectAllDiv {
+	order: 2;
+	flex: 0 1 auto;
+	margin-left: auto;
+	align-self: flex-start;
+	background-color: green;
+}
+#userTableDiv #noShowDiv {
+	order: 0;
+	flex: 0 1 auto;
+	margin-left: auto;
+	background-color: grey;
+}
+#userTableDiv #submitBtnDiv {
+	order: 3;
+	flex: 0 0 100%;
+	background-color: pink;
+	margin-right: auto;
+}*/
+
+/* Print Styling */
+@media print {
+	.noprint {
+		display: none !important;
+	}
+	.branding {
+	    background: transparent;
+	    border: none;
+	    outline: none;
+	    box-shadow: none;        
+	    padding: 0;
+	    height: auto;
+	    width: auto;
+	    min-height: auto;
+	}
+	#title {
+		align-content: flex-start;
+	}
+	body {
+		margin: 0 0 0 0;
+	}
+	/* General, including course-roster */
+	.printAdjust {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-content: flex-start;
+	}
+	#h2-roster span {
+		display: none;
+	}
+	#h2-roster:after {
+		content: "Session:";
+	}
+	/* Session listings, including course-list */
+	.printAdjust.list {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-content: flex-start;
+	}
+	.course, .printCourse {
+		flex: 0 auto;
+		border: none;
+		white-space: nowrap;
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+		order: 1;
+	}
+	.nowrap.printCourse {
+		display: block;
+	}
+	div.course-desc {
+		flex: 0 auto;
+		white-space: nowrap;
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+		margin-right: auto;
+		order: 2;
+	}
+	div.course-desc:before {
+		content: ": ";
+	}
+	.winediv {
+		flex: 1 100%;
+		order: 4;
+	}
+	.printInstruct {
+		flex: 1 100%;
+		order: 3;
+	}
+	table.wines, .wines {
+		width: 100%;
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+	}
+	p {
+		margin: 20px 20px;
+	}
+}

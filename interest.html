@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Fig. 8.6: Interest.html -->
+<!-- Compound interest calculation with a for loop. -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>Doughnut Club - Interesting Interest</title>
+	<link href="styles/doughnutclub.css" rel="stylesheet" type="text/css"/>
+	<script>var __adobewebfontsappname__="dreamweaver"</script>
+	<script src="http://use.edgefonts.net/source-sans-pro:n2,n4:default.js" type="text/javascript"></script>
+	<script>
+		window.jQuery || 
+			document.write('<script src="jquery-3.3.1.min.js"><\/script>')
+	</script>
+</head>
+
+<footer id="footer" class="noprint">
+	<div>
+		Please send feedback to
+		<a href="mailto:dcrump@mail.bradley.edu?subject=Doughnut%20Club%20Feedback">
+		dcrump@mail.bradley.edu</a>
+	</div>
+</footer>
+
+<body>
+	<script>
+	$(function(){
+		$("#menu-placeholder").load("menu.html");
+		$("#interest").tablesorter();
+	});
+	</script>
+
+<div class="branding">
+	<!--<div id="logo" class="noprint">
+	    <div id="long"><img src="images/doughnut.jpg" alt="Doughnuts!" /></div>
+	</div>-->
+	<!--<div id="userDetails" class="noprint">
+		<div id="userName">
+		</div>
+		<div id="userGroup">
+		</div>
+	</div>-->
+	<div id="title">
+		<div id="name"><b>Doughnut Club </b></div>
+		<div id="term"><b> Spring 2018</b></div>
+	</div>
+   	<div id="menu-placeholder" class="noprint"></div>
+</div>
+
+<div id="wrapper">
+	<p>Learn how your money will grow today, to purchase more doughnuts tomorrow!</p>
+    <style type = "text/css">
+         table         { width: 300px;
+                         border-collapse:collapse; 
+                         background-color: lightblue; }
+         table, td, th { border: 1px solid black; 
+                         padding: 4px; }
+         th            { text-align: left; 
+                         color: white;
+                         background-color: darkblue; }
+         tr.oddrow     { background-color: white; }
+      </style>
+      <script>
+
+         var amount; // current amount of money
+         var principal = 1000.00; // principal amount
+         var rate = 0.05; // interest rate
+
+         document.writeln( "<table>" ); // begin the table
+         document.writeln( 
+            "<h2><caption>Calculating Compound Interest</caption></h2>" );
+         document.writeln( 
+            "<thead><tr><th>Year</th>" ); // year column heading
+         document.writeln(
+            "<th>Amount on deposit</th>" ); // amount column heading
+         document.writeln( "</tr></thead><tbody>" );
+         // output a table row for each year
+         for ( var year = 1; year <= 10; ++year )
+         {
+            amount = principal * Math.pow( 1.0 + rate, year );
+
+            if ( year % 2 !== 0 )
+               document.writeln( "<tr class='oddrow'><td>" + year + 
+                  "</td><td>" + amount.toFixed(2) + "</td></tr>" );
+            else
+               document.writeln( "<tr><td>" + year + 
+                  "</td><td>" + amount.toFixed(2) + "</td></tr>" );
+         } //end for
+         document.writeln( "</tbody></table>" );
+      </script>
+ </div>
+ <br/><br/><br/><br/>
+</body>
+</html>
